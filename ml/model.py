@@ -25,9 +25,9 @@ def train_model(X_train, y_train):
     X_train_scaled = scaler.fit_transform(X_train)
 
     model = LogisticRegression(max_iter=5000, solver='liblinear')
-    model.fit(X_train, y_train)
+    model.fit(X_train_scaled, y_train)
 
-    return model, scaler
+    return model
 
 def compute_model_metrics(y, preds):
     """
